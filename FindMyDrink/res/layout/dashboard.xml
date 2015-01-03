@@ -13,9 +13,90 @@
         <!--  Include Footer -->
       <!--  <include layout="@layout/footer_layout"/> -->
       
-      <TextView android:layout_width="fill_parent"
+   <!--     <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"                
                 android:id="@+id/tv_dashboard_user"/>
-             
+             -->
+      
+    <ViewStub
+        android:id="@+id/vsHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/header"
+        android:layout="@layout/header" />
+ 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dip" >
+ 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+ 
+            <Button
+                android:id="@+id/main_btn_eclair"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/adddrink"
+                android:onClick="onButtonClicker"
+                android:text="@string/adddrink" />
+ 
+            <Button
+                android:id="@+id/main_btn_froyo"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/search"
+                android:onClick="onButtonClicker"
+                android:text="@string/search" />
+        </LinearLayout>
+ 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+ 
+            <Button
+                android:id="@+id/main_btn_gingerbread"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/blog"
+                android:onClick="onButtonClicker"
+                android:text="@string/blog" />
+ 
+            <Button
+                android:id="@+id/main_btn_honeycomb"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/events"
+                android:onClick="onButtonClicker"
+                android:text="@string/events" />
+        </LinearLayout>
+ 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+ 
+            <Button
+                android:id="@+id/main_btn_ics"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/invitefriends"
+                android:onClick="onButtonClicker"
+                android:text="@string/invite_friends" />
+ 
+            <Button
+                android:id="@+id/main_btn_jellybean"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/checkin"
+                android:onClick="onButtonClicker"
+                android:text="@string/checkin" />
+        </LinearLayout>
+    </LinearLayout>
+
+      
+      <ViewStub />
 </LinearLayout>
