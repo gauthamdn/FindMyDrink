@@ -28,7 +28,9 @@ public class DashBoardLayout extends Activity implements OnClickListener{
 		btCheckin.setOnClickListener(this);
 		btAddDrink.setOnClickListener(this);
 		btInviteFriends.setOnClickListener(this);
-				
+
+
+
 	}
 
 	private void initialize() {
@@ -46,32 +48,44 @@ public class DashBoardLayout extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		
+		Intent i;
 		switch(arg0.getId()){
 		
 		case R.id.btn_addDrink :
-			
+			i = new Intent("com.find.my.drink.AddDrink");
+            startActivity(i);
+
 			break;
 			
 		case R.id.btn_blog:
-			
-			break;
+            i = new Intent("com.find.my.drink.Blog");
+            startActivity(i);
+
+            break;
 			
 		case R.id.btn_checkin:
-			
-			break;
+            i = new Intent("com.find.my.drink.Checkin");
+            startActivity(i);
+
+            break;
 			
 		case R.id.btn_events:
-			
-			break;
+            i = new Intent("com.find.my.drink.Events");
+            startActivity(i);
+
+            break;
 			
 		case R.id.btn_inviteFriends:
-			
-			break;
+            i = new Intent("com.find.my.drink.InviteFriends");
+            startActivity(i);
+
+            break;
 			
 		case R.id.btn_search:
-			
-			break;
+            i = new Intent("com.find.my.drink.Search");
+            startActivity(i);
+
+            break;
 			
 			
 		}
