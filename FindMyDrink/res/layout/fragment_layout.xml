@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.find.my.drink.DashBoardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe"
+    android:orientation="vertical">
+    
+    <Button
+        android:id="@+id/btn_search"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/search"
+        android:text="Search" />
+     
+    <!--  Friends Button -->
+    <Button
+        android:id="@+id/btn_addDrink"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/adddrink"
+        android:text="New Drink" />
+     
+    <!--  Messages Button -->
+    <Button
+        android:id="@+id/btn_events"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/events"
+        android:text="Events" />
+     
+    <!--  Places Button -->
+    <Button
+        android:id="@+id/btn_checkin"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/checkin"
+        android:text="CheckIn" />
+ 
+    <!--  Events Button -->
+    <Button
+        android:id="@+id/btn_inviteFriends"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/invitefriends"
+        android:text="Invite Friends" />
+ 
+    <!--  Photos Button -->
+    <Button
+        android:id="@+id/btn_blog"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/blog"
+        android:text="Blog Feed" />
+    
+    
+</com.find.my.drink.DashBoardLayout>
