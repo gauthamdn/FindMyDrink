@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 					//userName ="No User Exists";
 					
 					if(userName.contentEquals("No User Exists")) {
-					Intent i = new Intent("com.find.my.drink.LOGINACTIVITY");
+					Intent i = new Intent("com.find.my.drink.DASHBOARD");
 					startActivity(i);
 					}
 					else{

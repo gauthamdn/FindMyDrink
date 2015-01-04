@@ -22,6 +22,15 @@ public class Drink {
 		this.desc = desc;
 		this.attributes = attributes;
 	}
+	
+	public Drink(String name, String context, String desc,
+			String attributes) {
+		super();		
+		this.name = name;
+		this.context = context;
+		this.desc = desc;
+		this.attributes = attributes;
+	}
 
 	public int getId() {
 		return id;

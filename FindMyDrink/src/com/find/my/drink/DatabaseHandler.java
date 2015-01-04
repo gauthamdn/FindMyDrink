@@ -201,6 +201,19 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 	
 	public void addDrink(Drink drink){
 		
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+		values.put(KEY_DRINK_NAME, drink.getName());
+		values.put(KEY_DRINK_CONTEXT, drink.getContext());
+		values.put(KEY_DRINK_DESC, drink.getDesc());
+		values.put(KEY_DRINK_ATTR, drink.getAttributes());
+		
+		db.insert(TABLE_DRINK, null, values);
+		db.close();
+
+
 	}
 	
 	public Drink checkDrinkExists(Drink drink){

@@ -1,12 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
     <TextView
+        android:id="@+id/tvDrinkName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/etDrinkName"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDrinkName"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Drink"
-        android:id="@+id/tvAddDrink"
-        android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+        android:layout_below="@+id/etDrinkName"
+        android:text="Description" />
+
+    <EditText
+        android:id="@+id/etDrinkDesc"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDescription"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/tvDrinkAttributes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etDrinkDesc"
+        android:text="Attributes" />
+
+    <EditText
+        android:id="@+id/etDrinkAttributes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDrinkAttributes"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etDrinkAttributes"
+        android:text="Category" />
+
+    <EditText
+        android:id="@+id/etDrinkCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCategory"
+        android:ems="10" />
+
+
+    <Button
+        android:id="@+id/btn_DrinkRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etDrinkCategory"
+        android:layout_marginTop="33dp"
+        android:text="Register Drink" />
+
+    
+</RelativeLayout>
