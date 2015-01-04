@@ -20,15 +20,17 @@ public class DashBoardLayout extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.dashboard);
+		
 		initialize();
-		btSearch.setOnClickListener(this);
+
+		btSearch.setOnClickListener(this);	
 		btBlog.setOnClickListener(this);
 		btEvents.setOnClickListener(this);
-		btCheckin.setOnClickListener(this);
+		btCheckin.setOnClickListener(this);	
 		btAddDrink.setOnClickListener(this);
-		btInviteFriends.setOnClickListener(this);
-
+		btInviteFriends.setOnClickListener(this);		
 
 
 	}
@@ -48,41 +50,41 @@ public class DashBoardLayout extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		Intent i;
+		Intent i;		
 		switch(arg0.getId()){
 		
-		case R.id.btn_addDrink :
-			i = new Intent("com.find.my.drink.AddDrink");
+		case R.id.btn_addDrink :			
+			i = new Intent("com.find.my.drink.ADDDRINK");			
             startActivity(i);
 
 			break;
 			
-		case R.id.btn_blog:
-            i = new Intent("com.find.my.drink.Blog");
+		case R.id.btn_blog:			
+			i = new Intent("com.find.my.drink.BLOG");			
             startActivity(i);
 
             break;
 			
-		case R.id.btn_checkin:
-            i = new Intent("com.find.my.drink.Checkin");
+		case R.id.btn_checkin:			
+            i = new Intent("com.find.my.drink.CHECKIN");
             startActivity(i);
 
             break;
 			
 		case R.id.btn_events:
-            i = new Intent("com.find.my.drink.Events");
+            i = new Intent("com.find.my.drink.EVENTS");
             startActivity(i);
 
             break;
 			
 		case R.id.btn_inviteFriends:
-            i = new Intent("com.find.my.drink.InviteFriends");
+            i = new Intent("com.find.my.drink.INVITEFRIENDS");
             startActivity(i);
 
             break;
 			
 		case R.id.btn_search:
-            i = new Intent("com.find.my.drink.Search");
+            i = new Intent("com.find.my.drink.SEARCH");
             startActivity(i);
 
             break;
