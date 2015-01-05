@@ -47,7 +47,7 @@ public class AddDrink extends Activity implements OnClickListener{
 			Drink drink = new Drink(etDrinkName.getText().toString(),etCategory.getText().toString(),etDesc.getText().toString(),etAttribute.getText().toString());
 			db.addDrink(drink);
 			
-			Toast.makeText(this, etDrinkName.getText().toString()+"Added!", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, etDrinkName.getText().toString()+" Added!", Toast.LENGTH_LONG).show();
 			etDesc.setText("");
 			etCategory.setText("");
 			etAttribute.setText("");

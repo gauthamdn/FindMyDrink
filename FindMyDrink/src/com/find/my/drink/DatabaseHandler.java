@@ -1,6 +1,7 @@
 package com.find.my.drink;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -224,8 +225,52 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 		return null;
 	}
 
-	public <List>Drink getAllDrinksByName(String name){
-		return null;
+	public <List>ArrayList<Drink> getAllDrinksByName(String name){
+		
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		ArrayList<Drink> listOfDrinks = new ArrayList<Drink>();
+				
+		String[] args = new String[1];
+		args[0] = "%"+name+"%";
+		Log.d("DatabaseHandler", " forming query");
+		String selectQuery = "SELECT * FROM "+TABLE_DRINK+" WHERE "+ KEY_DRINK_NAME + " like ?";
+		
+		Log.d("DatabaseHandler", " invoking query");
+		Cursor cursor = db.rawQuery(selectQuery, args);
+		
+		
+		Log.d("DatabaseHandler", " before nullcheck on cursor");
+		if(cursor.getCount() != 0){
+			Log.d("DatabaseHandler", " cursor is not null ");
+			while(cursor.moveToFirst()){
+			
+				Drink drink = new Drink();	
+				//drink.id = cursor.getInt(0);
+				drink.name = cursor.getString(1);
+				drink.context = cursor.getString(2);
+				drink.attributes = cursor.getString(3);
+				drink.desc = cursor.getString(5);
+				Log.d("DatabaseHandler", " iterating through the cursor "+cursor.getString(1));
+				listOfDrinks.add(drink);
+				Log.d("DatabaseHandler", " adding to list of drinks "+cursor.getString(1));
+				drink=null;
+				
+			}
+			cursor.close();
+			Log.d("DatabaseHandler", " closing cursor and returning  ");
+			return listOfDrinks;
+		}else{
+			Log.d("DatabaseHandler", " cursor is null baby");
+			Drink drink = new Drink();
+			drink.name =  "No Drink Exists";
+			Log.d("DatabaseHandler", " added no drink exists to drink");
+			listOfDrinks.add(drink);
+			cursor.close();
+			Log.d("DatabaseHandler", "closed cursor and returning list of empty drinks");
+			return listOfDrinks;
+		}
+		
 	}
 	
 	

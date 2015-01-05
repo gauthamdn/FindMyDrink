@@ -50,53 +50,29 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>            
         </activity>
-         <activity
+        <activity
             android:name="com.find.my.drink.AddDrink"
-            android:label="AddDrink" >  
+            android:label="AddDrink" >   
             <intent-filter>
                 <action android:name="com.find.my.drink.ADDDRINK" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>                       
+            </intent-filter>            
         </activity>
-         <activity
-            android:name="com.find.my.drink.Blog"
-            android:label="Blog" >
-            <intent-filter>
-                <action android:name="com.find.my.drink.BLOG" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>                         
-        </activity>
-         <activity
-            android:name="com.find.my.drink.Checkin"
-            android:label="Checkin" >
-            <intent-filter>
-                <action android:name="com.find.my.drink.CHECKIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>                         
-        </activity>
-         <activity
-            android:name="com.find.my.drink.Events"
-            android:label="Events" >
-            <intent-filter>
-                <action android:name="com.find.my.drink.EVENTS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>                         
-        </activity>
-         <activity
-            android:name="com.find.my.drink.InviteFriends"
-            android:label="InviteFriends" >
-            <intent-filter>
-                <action android:name="com.find.my.drink.INVITEFRIENDS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>                         
-        </activity>
-         <activity
+        <activity
             android:name="com.find.my.drink.Search"
-            android:label="Search" >
-			<intent-filter>
+            android:label="Search" >   
+            <intent-filter>
                 <action android:name="com.find.my.drink.SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>                        
+            </intent-filter>            
+        </activity>
+        <activity
+            android:name="com.find.my.drink.SearchResultsList"
+            android:label="SearchResults" >   
+            <intent-filter>
+                <action android:name="com.find.my.drink.SEARCHRESULTSLIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>            
         </activity>
         
     </application>

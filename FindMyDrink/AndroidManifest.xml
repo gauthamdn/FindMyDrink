@@ -50,6 +50,31 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>            
         </activity>
+        <activity
+            android:name="com.find.my.drink.AddDrink"
+            android:label="AddDrink" >   
+            <intent-filter>
+                <action android:name="com.find.my.drink.ADDDRINK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>            
+        </activity>
+        <activity
+            android:name="com.find.my.drink.Search"
+            android:label="Search" >   
+            <intent-filter>
+                <action android:name="com.find.my.drink.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>            
+        </activity>
+        <activity
+            android:name="com.find.my.drink.SearchResultsList"
+            android:label="SearchResults" >   
+            <intent-filter>
+                <action android:name="com.find.my.drink.SEARCHRESULTSLIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>            
+        </activity>
+        
     </application>
 
 </manifest>
