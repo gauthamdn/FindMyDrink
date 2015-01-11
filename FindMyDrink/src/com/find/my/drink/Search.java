@@ -45,46 +45,47 @@ public class Search extends Activity implements OnClickListener{
 		switch(v.getId()){
 		 
 		case R.id.ivSearchButton:
-			Log.d("Search", "inside OnClick method - search button case");
-			ArrayList<Drink> drink = new ArrayList<Drink>();
-			DatabaseHandler db = new DatabaseHandler(this);
-			Log.d("Search", "before calling gt all drinks by name");
-			drink = db.getAllDrinksByName(etSearchparam.getText().toString());
-			Log.d("Search", "after calling gt all drinks by name");
-			
-			if(drink.get(0).getName()!="No Drink Exists") {
-				Log.d("Search", "inside if drinks found ");
-			ArrayList<String> drinkName = new ArrayList<String>();
-			ArrayList<String> drinkDesc = new ArrayList<String>();
-			ArrayList<String> drinkContext = new ArrayList<String>();
-			ArrayList<String> drinkAttr = new ArrayList<String>();
-			
-			for( int i = 0; i< drink.size(); i++)
-			{
-				drinkName.add(drink.get(i).getName().toString());
-				drinkDesc.add(drink.get(i).getDesc().toString());
-				drinkContext.add(drink.get(i).getContext().toString());
-				drinkAttr.add(drink.get(i).getAttributes().toString());
-			}
-			
-			Log.d("Search", "before intent of searchResllts list found ");
-			Intent i = new Intent("com.find.my.drink.SEARCHRESULTSLIST");
-			Bundle b = new Bundle();
-			b.putStringArrayList("drinkName", drinkName);
-			b.putStringArrayList("drinkDesc", drinkDesc);
-			b.putStringArrayList("drinkContext", drinkContext);
-			b.putStringArrayList("drinkAttr", drinkAttr);
-			i.putExtras(b);
-			Log.d("Search", "before intent of searchResllts START ACTIVITY ");
-			startActivity(i);
-			}
-			else{
-				Log.d("Search", "inside else drinks not found ");
-				Toast.makeText(this, "No Drink Found", Toast.LENGTH_LONG).show();
-
-			}
-			
-			break;
+								Log.d("Search", "inside OnClick method - search button case");
+								ArrayList<Drink> drink = new ArrayList<Drink>();
+								DatabaseHandler db = new DatabaseHandler(this);
+								Log.d("Search", "before calling gt all drinks by name");
+								drink = db.getAllDrinksByName(etSearchparam.getText().toString());
+								Log.d("Search", "after calling gt all drinks by name");
+								
+								if(drink.get(0).getName()!="No Drink Exists") 
+								{
+									Log.d("Search", "inside if drinks found ");
+									ArrayList<String> drinkName = new ArrayList<String>();
+									ArrayList<String> drinkDesc = new ArrayList<String>();
+									ArrayList<String> drinkContext = new ArrayList<String>();
+									ArrayList<String> drinkAttr = new ArrayList<String>();
+								
+									for( int i = 0; i< drink.size(); i++)
+									{
+										drinkName.add(drink.get(i).getName().toString());
+										drinkDesc.add(drink.get(i).getDesc().toString());
+										drinkContext.add(drink.get(i).getContext().toString());
+										drinkAttr.add(drink.get(i).getAttributes().toString());
+									}
+								
+									Log.d("Search", "before intent of searchResllts list found ");
+									Intent i = new Intent("com.find.my.drink.SEARCHRESULTSLIST");
+									Bundle b = new Bundle();
+									b.putStringArrayList("drinkName", drinkName);
+									b.putStringArrayList("drinkDesc", drinkDesc);
+									b.putStringArrayList("drinkContext", drinkContext);
+									b.putStringArrayList("drinkAttr", drinkAttr);
+									i.putExtras(b);
+									Log.d("Search", "before intent of searchResllts START ACTIVITY ");
+									startActivity(i);
+								}
+								else{
+									Log.d("Search", "inside else drinks not found ");
+									Toast.makeText(this, "No Drink Found", Toast.LENGTH_LONG).show();
+					
+								}
+								
+								break;
 		
 		}
 		

@@ -74,6 +74,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>            
         </activity>
+        <activity
+            android:name="com.find.my.drink.DisplayDrinkDetails"
+            android:label="SearchResults" >   
+            <intent-filter>
+                <action android:name="com.find.my.drink.DISPLAYDRINKDETAILS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>            
+        </activity>
         
     </application>
 

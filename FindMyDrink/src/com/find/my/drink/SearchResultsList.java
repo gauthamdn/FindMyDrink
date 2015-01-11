@@ -15,10 +15,27 @@ import android.widget.ListView;
 
 public class SearchResultsList extends ListActivity {
 
+	
+	ArrayList<String> drinkName, drinkDesc,drinkContext, drinkAttr;
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
+		
+		
+		
+		Intent i = new Intent("com.find.my.drink.DISPLAYDRINKDETAILS");
+		Bundle b = new Bundle();
+		b.putString("drinkName",drinkName.get(position).toString()); 
+		b.putString("drinkDesc", drinkDesc.get(position).toString());
+		b.putString("drinkContext", drinkContext.get(position).toString());
+		b.putString("drinkAttr", drinkAttr.get(position).toString());
+		i.putExtras(b);
+		Log.d("Search", "before intent of DISPLAYDRINKDETAILS START ACTIVITY ");
+		startActivity(i);
+		
+		
 	}
 
 	
@@ -33,13 +50,13 @@ public class SearchResultsList extends ListActivity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		Intent i = getIntent();
 		Log.d("Search Results", "Inside On Create method recieveing intent extra drinkName");
-		ArrayList<String> drinkName = i.getStringArrayListExtra("drinkName");
+		drinkName = i.getStringArrayListExtra("drinkName");
 		Log.d("Search Results", "Inside On Create method recieveing intent extra desc");
-		ArrayList<String> drinkDesc = i.getStringArrayListExtra("drinkDesc");
+		drinkDesc = i.getStringArrayListExtra("drinkDesc");
 		Log.d("Search Results", "Inside On Create method recieveing intent extra context ");
-		ArrayList<String> drinkContext = i.getStringArrayListExtra("drinkContext");
+		drinkContext = i.getStringArrayListExtra("drinkContext");
 		Log.d("Search Results", "Inside On Create method recieveing intent extra attr");
-		ArrayList<String> drinkAttr = i.getStringArrayListExtra("drinkAttr");
+		drinkAttr = i.getStringArrayListExtra("drinkAttr");
 		Log.d("Search Results", "Inside On Create method before setListAdapter");
 		setListAdapter(new ArrayAdapter<String>(SearchResultsList.this,android.R.layout.simple_list_item_1,drinkName));
 		Log.d("Search Results", "Inside On Create method after setListAdapter");
