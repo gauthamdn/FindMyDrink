@@ -56,11 +56,11 @@ public class MainActivity extends Activity {
 					e.printStackTrace();
 				} finally{
 										
-					Log.d("MainActivity", " before Invoking checkUserExists");
-					userName = db.checkUserExists();
-					Log.d("MainActivity", " Invoked checkUserExists and username is"+userName);
+				//	Log.d("MainActivity", " before Invoking checkUserExists");
+				//	userName = db.checkUserExists();
+				//	Log.d("MainActivity", " Invoked checkUserExists and username is"+userName);
 					//userName ="No User Exists";
-					
+					userName = "Test";
 					if(userName.contentEquals("No User Exists")) {
 					Intent i = new Intent("com.find.my.drink.DASHBOARD");
 					startActivity(i);

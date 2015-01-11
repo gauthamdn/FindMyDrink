@@ -234,17 +234,18 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 		String[] args = new String[1];
 		args[0] = "%"+name+"%";
 		Log.d("DatabaseHandler", " forming query");
-		String selectQuery = "SELECT * FROM "+TABLE_DRINK+" WHERE "+ KEY_DRINK_NAME + " like ?";
+		String selectQuery = "SELECT * FROM "+TABLE_DRINK+" WHERE UPPER("+ KEY_DRINK_NAME + ") like ?";
 		
 		Log.d("DatabaseHandler", " invoking query");
 		Cursor cursor = db.rawQuery(selectQuery, args);
 		
 		
 		Log.d("DatabaseHandler", " before nullcheck on cursor");
-		if(cursor.getCount() != 0){
+		if(cursor.getCount() != 0 && cursor.moveToFirst()){
 			Log.d("DatabaseHandler", " cursor is not null ");
-			while(cursor.moveToFirst()){
 			
+			do{
+	
 				Drink drink = new Drink();	
 				//drink.id = cursor.getInt(0);
 				drink.name = cursor.getString(1);
@@ -256,7 +257,8 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 				Log.d("DatabaseHandler", " adding to list of drinks "+cursor.getString(1));
 				drink=null;
 				
-			}
+			}while(cursor.moveToNext());
+			
 			cursor.close();
 			Log.d("DatabaseHandler", " closing cursor and returning  ");
 			return listOfDrinks;
